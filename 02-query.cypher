@@ -11,6 +11,7 @@ MATCH (player:PLAYER) RETURN player
 // Properies //
 MATCH (player:PLAYER) RETURN player.name, player.height
 
+
 ////////////////////////////////////////////////////////////
 // =============== Filtering For Nodes ================== //
 ////////////////////////////////////////////////////////////
@@ -86,6 +87,7 @@ MATCH (coach:COACH), (player:PLAYER)
 RETURN coach, player
 
 
+
 ////////////////////////////////////////////////////////////
 // ============== Querying Relationships ================ //
 ////////////////////////////////////////////////////////////
@@ -110,6 +112,7 @@ MATCH (lebron:PLAYER {name: "LeBron James"}) - [:TEAMMATES] -> (teammate:PLAYER)
 MATCH (teammate) - [contract:PLAYS_FOR] -> (:TEAM)
 WHERE contract.salary >= 40000000
 RETURN teammate
+
 
 ////////////////////////////////////////////////////////////
 // ==================== Aggregates ====================== //
